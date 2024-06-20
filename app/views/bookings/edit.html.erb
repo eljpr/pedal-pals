@@ -1,0 +1,35 @@
+<div class="container">
+
+  <h4 class="card-title mt-3"> Book your bike: <%=  @bike.category %></h4>
+    <div class="back-link">
+    <p><%= link_to 'Back to all bikes', bikes_path %></p>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <div class="card p-2 m-2 card-booking">
+      <img src="https://d1mo5ln9tjltxq.cloudfront.net/-/media/images/my23/bikes/road/endurance/synapse/tech-images/c23_synapsealloy_tech_0004.ashx?mh=2560&mw=1920&hash=C1DEADD7DE90FB022FDE5A6E51173ACE" class="card-img-top" alt="Bike image">
+        <div class="card-body">
+          <h5 class="card-title"><%= @bike.location %></h5>
+          <p class="card-text"> <strong>Price per Day:</strong> £<%= @bike.price_per_day %></p>
+          <p class="card-text"><strong>Category:</strong> <%= @bike.category %></p>
+          <% condition = "<i class='fa-solid fa-star' style='color: #05b470;'></i>".html_safe %>
+          <p class="card-text"><strong>Condition:</strong> <%= condition * @bike.condition  %></p>
+          <%= link_to 'View Details', bike_path(@bike), class:'btn' %>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-6">
+      <div class="card p-2 m-2 card-booking">
+      <h5>Pick your dates!</h5>
+        <div class="form">
+          <%= simple_form_for [@bike, @booking] do |f| %>
+            <%= f.input :start_date %>
+            <%= f.input :end_date%>
+            <%= f.submit "Amend", class: 'btn btn-flat' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
