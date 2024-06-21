@@ -2,14 +2,19 @@
   <%= form_with url: bikes_path, method: :get, class: "d-flex" do %>
     <%= text_field_tag :search_by_category,
       params[:search_by_category],
-      class: "form-control",
+      class: "search-input",
       placeholder: "Type of bike"
       %>
-    <%= text_field_tag :search_by_location,
-      params[:search_by_location],
-      class: "form-control",
-      placeholder: "Location"
-      %>
-    <%= submit_tag "Search", name: "", class: "" %>
+    <div class="search-input">
+      <%= text_field_tag :search_by_location,
+        params[:search_by_location],
+        class: "search-location",
+        placeholder: "Location"
+        %>
+      <%= button_tag(type: "submit", class: "search-submit") do %>
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    <% end %>
+
   <% end %>
 </div>
