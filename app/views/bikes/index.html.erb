@@ -1,16 +1,14 @@
+<!--<div class="bikes-container">-->
+    <%= render "searchbar" %>
 
-
-  <h1>Bikes in Your Area</h1>
-
-  <%= render "searchbar" %>
-
-  <div class="flexbox">
-    <div class="bike-cards px-2">
+  <div class="bike-map-flex row">
+    <div class="col bike-cards px-2">
     <%= render "card_detail" %>
     </div>
 
-    <div class="map-card" style="width: 500px; height: 1200px;"
+    <div class="col map-card"
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
+<!--</div>-->

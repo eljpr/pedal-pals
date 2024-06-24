@@ -1,3 +1,17 @@
+#pp-nav-container{
+  position: fixed;
+  height: 70px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index:100;
+  overflow: none;
+}
+
+.nav-spacer{
+  height: 70px;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
   background: #FAF9F6;
